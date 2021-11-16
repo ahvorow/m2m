@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Create mail</title>
+		<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<div class="card">
+			<div class="card-header">
+				<h3><a href="http://127.0.0.1:8000/">MailtoMe</a></h3>
+			</div>
+			<div class="mx-auto">
+			    <div class="card-body">
+					<div class="container">
+						<div class="row">
+							<form action="" method="post">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+								<div class="col-auto my-1">
+									<button name="send" type="submit" class="btn btn-primary">Send Mail</button>
+							  	</div>
+						    </form>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+	</body>
+	<script src="{% static 'js/bootstrap.js' %}"></script>
+</html>
